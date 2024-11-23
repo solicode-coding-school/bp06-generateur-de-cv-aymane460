@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Resume Generator</h1>
+        <form id="resume-form" onsubmit="return resume.generatePDF();">
+            <div class="form-section">
+                <div class="column">
+                    <div class="section-header">Personal Information</div>
+                    <img id="profile-image" src="https://via.placeholder.com/150" alt="Profile Photo">
+                    <input type="file" id="image-upload" accept="image/*" onchange="updateImage()" required>
+                    <input type="text" id="name" placeholder="Full Name" required minlength="3">
+                    <input type="email" id="email" placeholder="Email" required>
+                    <input type="tel" id="phone" placeholder="Phone" required pattern="^[0-9]{10,15}$" title="Enter a valid phone number with 10-15 digits.">
+                    <input type="text" id="address" placeholder="Address" required>
+                    <input type="date" id="dob" required>
+                    <div class="section-header">Education</div>
+                    <div id="education-section">
+                        <input type="text" class="education" placeholder="Education" required>
+                    </div>
+                    <button class="add-field-btn" type="button" onclick="addField('education-section', 'Education')">Add</button>
+                    <div class="section-header">Languages</div>
+                    <div id="languages-section">
+                        <input type="text" class="language" placeholder="Language" required>
+                    </div>
+                    <button class="add-field-btn" type="button" onclick="addField('languages-section', 'Language')">Add</button>
+                </div>
+                <div class="column">
+                    <div class="section-header">Professional Information</div>
+                    <div class="section-header">Objective</div>
+                    <textarea id="objective" placeholder="Write your objective" required></textarea>
+                    <div class="section-header">Professional Skills</div>
+                    <div id="skills-section">
+                        <input type="text" class="skill" placeholder="Skill" required>
+                    </div>
+                    <button class="add-field-btn" type="button" onclick="addField('skills-section', 'Skill')">Add</button>
+                    <div class="section-header">Experience</div>
+                    <div id="experience-section">
+                        <input type="text" class="experience" placeholder="Experience" required>
+                    </div>
+                    <button class="add-field-btn" type="button" onclick="addField('experience-section', 'Experience')">Add</button>
+                </div>
+            </div>
+            <button class="generate-cv-btn" type="submit">Generate CV</button>
+        </form>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
