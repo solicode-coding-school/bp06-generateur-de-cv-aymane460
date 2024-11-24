@@ -20,8 +20,14 @@ class Resume {
   }
 
   getFieldValues(selector) {
-      return [...document.querySelectorAll(selector)].map(input => input.value);
-  }
+    const values = [];
+    const inputs = document.querySelectorAll(selector);
+    for (let i = 0; i < inputs.length; i++) {
+        values.push(inputs[i].value);
+    }
+    return values;
+}
+
 
   generatePDF() {
       this.collectData();
