@@ -66,6 +66,7 @@ h1 {
   cursor: pointer;
   font-size: 16px;
   margin: 10px 5px;
+  margin-left: 200px;
 }
 
 .generate-cv-btn {
@@ -77,6 +78,8 @@ h1 {
   border-radius: 5px;
   cursor: pointer;
   font-size: 16px;
+  margin: 10px 5px;
+  margin-left: 420px;
 }
 
 .add-field-btn:hover, .generate-cv-btn:hover {
